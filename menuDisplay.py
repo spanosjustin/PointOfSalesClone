@@ -4,6 +4,7 @@ import imageDisplay  # Import the module where images are loaded
 
 def displayMenuScreen(w):
     images = imageDisplay.load_images()  # Load images
-    print("Displaying Menu Screen")
-    # Example of displaying an image, adjust coordinates as needed
+    # order window
+    w.create_rectangle(500, 0, 750, 600, outline="#36373b", fill="white")
+    # menu display
     w.create_image(50, 50, anchor=NW, image=images['burger'])
