@@ -2,7 +2,6 @@
 from datetime import datetime
 from tkinter import *
 from menuDisplay import *
-from otherFunction import *
 import sys
 
 # set up the GUI
@@ -24,6 +23,8 @@ dateAndTime = now.strftime("%d/%m/%y, %H:%M")
 
 # variables
 
+### METHODS AND FUNCTIONS
+
 # display screen
 def display():
     ## System functions methods
@@ -33,6 +34,9 @@ def display():
     def funcButton(*args):
        displayFuncScreen(w)
 
+    def managerButton(*args):
+       displayManagerFunction(w)
+
     #### SYSTEM BUTTONS
     ## menu button
     w.create_rectangle(0, 60, 80, 110, outline="#36373b", fill="#36373b", tag="menuButton")
@@ -40,10 +44,17 @@ def display():
     ## other functions
     w.create_rectangle(0, 115, 80, 165, outline="#36373b", fill="#36373b", tag="funcButton")
     w.create_text(40, 138, text="FUNC", font=("Helvetica", 20), tags="funcButton")
+    ## manaer functions
+    w.create_rectangle(0, 170, 80, 220, outline="#36373b", fill="#36373b", tag="managerButton")
+    w.create_text(40, 192, text="MNGR", font=("Helvetica", 20), tags="managerButton")
 
     ## button pushed
     w.tag_bind("menuButton","<Button-1>",menuTabClicked)
     w.tag_bind("funcButton","<Button-1>",funcButton)
+    w.tag_bind("managerButton","<Button-1>",managerButton)
+
+    # display boarders
+    boarderDisplay(w)
 
 # Calls the display function
 display()
