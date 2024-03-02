@@ -58,3 +58,4 @@ def display():
 
 # Calls the display function
 display()
+master.mainloop()
